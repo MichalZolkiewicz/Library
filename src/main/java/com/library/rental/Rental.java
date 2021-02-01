@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -19,6 +20,8 @@ public class Rental {
     @Id
     @NotNull
     @GeneratedValue
+    private Long id;
+
     @OneToOne
     @JoinColumn(name = "copy_id")
     private Copy copyId;
