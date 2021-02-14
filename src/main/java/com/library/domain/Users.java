@@ -1,4 +1,4 @@
-package com.library.titles;
+package com.library.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,21 +14,20 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Getter
 @Entity
-public class Titles {
+public class Users {
 
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "title_id")
+    @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "firstname")
+    private String firstname;
 
-    @Column(name = "author")
-    private String author;
+    @Column(name = "lastname")
+    private String lastname;
 
-    @Column(name = "releaseYear")
-    private int releaseYear;
-
+    @Column(name = "joined")
+    private String joined;
 }

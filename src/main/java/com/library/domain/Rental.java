@@ -1,14 +1,11 @@
-package com.library.rental;
+package com.library.domain;
 
-import com.library.copies.Copy;
-import com.library.users.Users;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @AllArgsConstructor
