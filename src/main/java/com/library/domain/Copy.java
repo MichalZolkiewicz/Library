@@ -22,7 +22,7 @@ public class Copy {
     @Column(name = "status")
     private String status;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "title_id")
     private Titles titles;
 

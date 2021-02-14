@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface TitlesRepository extends CrudRepository<Titles, Long> {
 
     @Override
-    Titles save(Titles title);
+    Titles save(Titles titles);
 
     @Override
     List<Titles> findAll();

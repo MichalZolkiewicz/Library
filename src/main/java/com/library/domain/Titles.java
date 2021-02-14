@@ -34,7 +34,7 @@ public class Titles {
             targetEntity = Copy.class,
             mappedBy = "titles",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     private List<Copy> copies = new ArrayList<>();
 
