@@ -123,6 +123,8 @@ class LibraryApplicationTests {
         assertNotEquals(0, id2);
         assertEquals("Michał", firstName);
 
+        //CleanUp
+        usersRepository.deleteAll();
     }
 
     @Test
