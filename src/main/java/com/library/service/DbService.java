@@ -12,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class DbService {
@@ -27,6 +30,30 @@ public class DbService {
 
     @Autowired
     private RentalRepository rentalRepository;
+
+    public List<Titles> getAllTitles() {
+       return titlesRepository.findAll();
+    }
+
+    public List<Users> getAllUsers() {
+       return usersRepository.findAll();
+    }
+
+    public List<Copy> getAllCopies() {
+        return copyRepository.findAll();
+    }
+
+    public List<Rental> getAllRental() {
+        return rentalRepository.findAll();
+    }
+
+    public Optional<Copy> getCopy(final Long id) {
+        return copyRepository.findById(id);
+    }
+
+    public Optional<Titles> getTitle(final Long id) {
+        return titlesRepository.findById(id);
+    }
 
     public Titles saveTitle(final Titles title) {
         return titlesRepository.save(title);

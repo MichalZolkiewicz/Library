@@ -15,7 +15,7 @@ public class CopyMapper {
     }
 
     public CopyDto mapToCopyDto(final Copy copy) {
-        return new CopyDto(copy.getId(), copy.getStatus());
+        return new CopyDto(copy.getId(), copy.getStatus(), copy.getTitles());
     }
 
     public List<CopyDto> mapToCopyDtoList(final List<Copy> copyList) {

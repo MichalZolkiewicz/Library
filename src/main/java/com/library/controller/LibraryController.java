@@ -22,6 +22,30 @@ public class LibraryController {
     private final CopyMapper copyMapper;
     private final RentalMapper rentalMapper;
 
+    @GetMapping(value = "getTitles")
+    public List<TitlesDto> getAllTitles() {
+        List<Titles> allTitles = dbService.getAllTitles();
+        return titlesMapper.mapToTitlesDtoList(allTitles);
+    }
+
+    @GetMapping(value = "getUsers")
+    public List<UsersDto> getAllUsers() {
+        List<Users> allUsers = dbService.getAllUsers();
+        return usersMapper.mapToUsersDtoList(allUsers);
+    }
+
+    @GetMapping(value = "getCopies")
+    public List<CopyDto> getAllCopies() {
+        List<Copy> allCopies = dbService.getAllCopies();
+        return copyMapper.mapToCopyDtoList(allCopies);
+    }
+
+    @GetMapping(value = "getRentals")
+    public List<RentalDto> getAllRentals() {
+        List<Rental> allRentals = dbService.getAllRental();
+        return rentalMapper.mapToRentalDtoList(allRentals);
+    }
+
     @PostMapping(value = "addUser")
     public void addUser(@RequestBody UsersDto usersDto) {
         Users user = usersMapper.mapToUser(usersDto);
@@ -42,16 +66,12 @@ public class LibraryController {
 
     @PutMapping(value = "updateCopyStatus")
     public CopyDto updateCopyStatus(@RequestBody CopyDto copyDto) {
-        Copy copy = copyMapper.mapToCopy(copyDto);
+        Long id = copyDto.getId();
+        Copy copy = dbService.getCopy(id).get();
+        copy.setStatus(copyDto.getStatus());
+
         Copy newCopyStatus = dbService.saveCopy(copy);
         return copyMapper.mapToCopyDto(newCopyStatus);
-    }
-
-    @GetMapping(value = "getCopies")
-    public List<CopyDto> getTitlesCopiesAmount(@RequestBody TitlesDto titlesDto) {
-        Titles title = titlesMapper.mapToTitles(titlesDto);
-        List<Copy> titleCopies = title.getCopies();
-        return copyMapper.mapToCopyDtoList(titleCopies);
     }
 
     @PostMapping(value = "createRental")

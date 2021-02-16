@@ -9,4 +9,5 @@ public class CopyDto {
 
     private Long id;
     private String status;
+    private Titles titles;
 }
