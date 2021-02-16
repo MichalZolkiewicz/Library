@@ -8,7 +8,6 @@ import com.library.repositories.RentalRepository;
 import com.library.repositories.TitlesRepository;
 import com.library.repositories.UsersRepository;
 import com.library.domain.Titles;
-import org.apache.catalina.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
