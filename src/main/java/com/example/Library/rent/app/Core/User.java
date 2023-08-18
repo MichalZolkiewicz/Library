@@ -19,14 +19,17 @@ public class User {
     public String lastName;
 
     @Id
+    @Column (name = "ID")
     public int getId() {
         return id;
     }
 
+    @Column (name = "NAME")
     public String getName() {
         return name;
     }
 
+    @Column (name = "LASTNAME")
     public String getLastName() {
         return lastName;
     }
