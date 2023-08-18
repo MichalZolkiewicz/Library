@@ -21,24 +21,29 @@ public class Rent {
     private double price;
 
     @Id
+    @Column (name = "ID")
     public int getId() {
         return id;
     }
 
+    @Column (name = "RENT_TIME_IN_DAYS")
     public int getRentTimeInDays() {
         return rentTimeInDays;
     }
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID")
     public User getUser() {
         return user;
     }
+
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "OWNER_ID")
     public Owner getOwner() {
         return owner;
     }
 
+    @Column (name = "PRICE")
     public double getPrice() {
         return price;
     }
