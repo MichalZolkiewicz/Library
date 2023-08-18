@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @AllArgsConstructor
@@ -20,10 +17,12 @@ public class Owner {
     private String name;
 
     @Id
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
 
+    @Column (name = "NAME")
     public String getName() {
         return name;
     }
