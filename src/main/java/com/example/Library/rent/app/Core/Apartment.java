@@ -21,22 +21,27 @@ public class Apartment {
     public String description;
 
     @Id
+    @Column (name = "ID")
     public int getId() {
         return id;
     }
 
+    @Column (name = "NAME")
     public String getName() {
         return name;
     }
 
+    @Column (name = "PRICE")
     public double getPrice() {
         return price;
     }
 
+    @Column (name = "SIZE")
     public double getSize() {
         return size;
     }
 
+    @Column (name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
