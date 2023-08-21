@@ -19,7 +19,7 @@ public class Rent {
 
     @Id
     @Column (name = "ID")
-    private int id;
+    private Long id;
 
     @Column (name = "RENT_TIME_IN_DAYS")
     private int rentTimeInDays;
@@ -40,7 +40,7 @@ public class Rent {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rent rent = (Rent) o;
-        return id == rent.id && rentTimeInDays == rent.rentTimeInDays && Double.compare(rent.price, price) == 0 && Objects.equals(user, rent.user) && Objects.equals(owner, rent.owner);
+        return id.equals(rent.id) && rentTimeInDays == rent.rentTimeInDays && Double.compare(rent.price, price) == 0 && Objects.equals(user, rent.user) && Objects.equals(owner, rent.owner);
     }
 
     @Override

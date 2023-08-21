@@ -15,7 +15,7 @@ public class User {
 
     @Id
     @Column (name = "ID")
-    private int id;
+    private Long id;
 
     @Column (name = "NAME")
     private String name;
@@ -28,7 +28,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(name, user.name) && Objects.equals(lastName, user.lastName);
+        return id.equals(user.id) && Objects.equals(name, user.name) && Objects.equals(lastName, user.lastName);
     }
 
     @Override
