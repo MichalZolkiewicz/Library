@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 public class ApartmentDto {
 
     private Long id;
+    private String name;
     private double price;
+    private double size;
     private String description;
 }
