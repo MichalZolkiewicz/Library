@@ -1,52 +1,39 @@
 package com.example.Library.rent.app.Core;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "RENT")
 public class Rent {
 
-    private int id;
-    private int rentTimeInDays;
-    private User user;
-    private Owner owner;
-    private double price;
-
     @Id
     @Column (name = "ID")
-    public int getId() {
-        return id;
-    }
+    private int id;
 
     @Column (name = "RENT_TIME_IN_DAYS")
-    public int getRentTimeInDays() {
-        return rentTimeInDays;
-    }
+    private int rentTimeInDays;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    public User getUser() {
-        return user;
-    }
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "OWNER_ID")
-    public Owner getOwner() {
-        return owner;
-    }
+    private Owner owner;
 
     @Column (name = "PRICE")
-    public double getPrice() {
-        return price;
-    }
+    private double price;
 
     @Override
     public boolean equals(Object o) {

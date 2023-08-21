@@ -1,38 +1,27 @@
 package com.example.Library.rent.app.Core;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table (name = "USER")
 public class User {
 
-    public int id;
-    public String name;
-    public String lastName;
-
     @Id
     @Column (name = "ID")
-    public int getId() {
-        return id;
-    }
+    private int id;
 
     @Column (name = "NAME")
-    public String getName() {
-        return name;
-    }
+    private String name;
 
     @Column (name = "LASTNAME")
-    public String getLastName() {
-        return lastName;
-    }
+    private String lastName;
 
     @Override
     public boolean equals(Object o) {

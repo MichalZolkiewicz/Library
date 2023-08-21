@@ -1,29 +1,25 @@
 package com.example.Library.rent.app.Core;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "OWNER")
 public class Owner {
 
-    private int id;
-    private String name;
-
     @Id
     @Column(name = "ID")
-    public int getId() {
-        return id;
-    }
+    private int id;
 
     @Column (name = "NAME")
-    public String getName() {
-        return name;
-    }
+    private String name;
+
 }
