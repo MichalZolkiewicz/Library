@@ -8,7 +8,6 @@ import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Setter
 @Getter
 @Entity
