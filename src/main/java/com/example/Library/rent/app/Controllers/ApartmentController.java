@@ -1,12 +1,10 @@
 package com.example.Library.rent.app.Controllers;
 
-import com.example.Library.rent.app.Core.Apartment;
 import com.example.Library.rent.app.DTO.ApartmentDto;
 import com.example.Library.rent.app.Facade.ApartmentFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,28 +14,28 @@ public class ApartmentController {
 
     private final ApartmentFacade apartmentFacade;
 
-    @GetMapping
+    @GetMapping(value = "/getApartments")
     public List<ApartmentDto> getAllApartments() {
-        return new ArrayList<>();
+        return apartmentFacade.getAllApartments();
     }
 
-    @GetMapping
-    public ApartmentDto getApartment() {
-        return new ApartmentDto();
+    @GetMapping(value = "/getApartment/{id}")
+    public ApartmentDto getApartment(@PathVariable Long apartmentId) {
+        return apartmentFacade.getApartmentDto(apartmentId);
     }
 
-    @PostMapping
-    public Apartment createApartment() {
-        return new Apartment();
+    @PostMapping(value = "/createApartment")
+    public Long createApartment(@RequestBody ApartmentDto apartmentDto) {
+        return apartmentFacade.createApartment(apartmentDto);
     }
 
-    @PutMapping
-    public Apartment updateApartment() {
-        return new Apartment();
+    @PutMapping(value = "/updateApartment")
+    public Long updateApartment(@RequestParam Long apartmentId, @RequestParam Double price) {
+        return apartmentFacade.updateApartment(apartmentId, price);
     }
 
-    @DeleteMapping
-    public void deleteApartment() {
-
+    @DeleteMapping(value = "/deleteApartment/{id}")
+    public void deleteApartment(@PathVariable Long apartmentId) {
+        apartmentFacade.deleteApartment(apartmentId);
     }
 }
